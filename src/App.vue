@@ -20,7 +20,6 @@ export default {
     return {
       transitionName : '',
       sssnull:true,
-      dddnull:true,
     }
   },
   components:{},
@@ -47,8 +46,8 @@ export default {
     },
     swiperdown(){
       let _this =this;
-      if(_this.dddnull == true){
-        _this.dddnull = false;
+      if(_this.sssnull == true){
+        _this.sssnull = false;
         let sections =_this.$route.path.split('/page');
         let num = Number(sections[sections.length-1]) - 1;
         if(num < MINPAGE){
@@ -59,7 +58,7 @@ export default {
           _this.$router.push(`page${num}`);
         }
         setTimeout(function () {
-          _this.dddnull = true;
+          _this.sssnull = true;
         },1000)
       }
     },
