@@ -18,32 +18,51 @@ export default {
   name: 'App',
   data(){
     return {
-      transitionName : ''
+      transitionName : '',
+      sssnull:true,
+      dddnull:true,
     }
   },
   components:{},
   methods:{
     swiperup(){
-      let sections =this.$route.path.split('/page');
-      let num = Number(sections[sections.length-1]) + 1;
-      if(num > MAXPAGE){
-        return alert('到头了22223')
+      let _this = this;
+      if(_this.sssnull == true){
+        _this.sssnull = false;
+        let sections =_this.$route.path.split('/page');
+        let num = Number(sections[sections.length-1]) + 1;
+        if(num > MAXPAGE){
+          // return
+          alert('到头了22223a');
+        }else if(num <= MAXPAGE){
+          _this.transitionName = 'slideUp';
+          _this.$router.push(`page${num}`);
+        }
+
+        setTimeout(function () {
+          _this.sssnull = true;
+        },1000);
+        console.log(_this.sssnull)
       }
-      this.transitionName = 'slideUp';
-      this.$router.push(`page${num}`);
-      console.log(sections)
-      console.log(num,'是这是')
     },
     swiperdown(){
-      let sections =this.$route.path.split('/page');
-      let num = Number(sections[sections.length-1]) - 1;
-      if(num < MINPAGE){
-        return alert('到头了22223')
+      let _this =this;
+      if(_this.dddnull == true){
+        _this.dddnull = false;
+        let sections =_this.$route.path.split('/page');
+        let num = Number(sections[sections.length-1]) - 1;
+        if(num < MINPAGE){
+          // return
+          alert('到头了22223');
+        }else if(num >=MINPAGE){
+          _this.transitionName = 'slideDown';
+          _this.$router.push(`page${num}`);
+        }
+        setTimeout(function () {
+          _this.dddnull = true;
+        },1000)
       }
-      this.transitionName = 'slideDown';
-      this.$router.push(`page${num}`);
-      console.log(num,'是这是2')
-    }
+    },
   },
   created(){
     // this.swiperup()
