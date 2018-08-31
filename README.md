@@ -28,9 +28,25 @@
 
 > 解决方法 不使用return 使用if ()else if() 在判断中执行我的结果 ，OK！
 
+# 坑爹的Vue-lazyload
 
+> 解决图片图片加载慢，提高客户体验决定使用懒加载。
 
+> npm install vue-lazyload -D
 
+> main.js 引入import VueLazyload from 'vue-lazyload'
 
+> main.js Vue.use(VueLazyload, {
+  preLoad: 1.3, //loading 高度设置
+  error: require('./assets/error.gif'),, //失败图片
+  loading: require('./assets/loading.gif'),, //加载中图片
+  attempt: 1 //请求次数
+})
 
-# 本来是在看微信小程序，准备写一下心得，算是一个总结，但是公司今天下午提出了这个移动端翻页的需求，小程序就先搁置了，弄出了这个需求，放到git上面，供自己翻阅。
+> html中 <img v-lazy=''> 就可以了 然后。。。
+
+> loading的宽高居然是100% ,原因是lazyload的loding 和我的 src 用的都是一个 img 标签 所以样式是一样的。。坑爹,而且中文的博客根本就没有提到过这个坑
+
+# 在我的不懈努力之下翻看的英文文档找到了解决方法
+
+# css中 img=[lazy=loading] 可以控制loading的样式
