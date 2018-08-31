@@ -28,7 +28,7 @@
 
 > 解决方法 不使用return 使用if ()else if() 在判断中执行我的结果 ，OK！
 
-# 坑爹的Vue-lazyload
+# 牛逼哄哄的Vue-lazyload
 
 <div align=center><img width="150" height="150" src="https://github.com/qwj19950918/VUE-/blob/master/src/assets/hehe.jpg"/></div>
 
