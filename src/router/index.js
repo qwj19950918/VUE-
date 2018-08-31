@@ -7,7 +7,7 @@ export default new Router({
   routes: [
     {
       path:'/',
-      redirect :'Page1',
+      redirect :'page1',
       component:resolve => require(['@/components/Page1'],resolve)
     },
     {

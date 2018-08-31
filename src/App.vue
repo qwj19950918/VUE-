@@ -70,11 +70,18 @@ export default {
 </script>
 
 <style>
+  img[lazy=loading]{
+    width: 25px!important;
+    height: 25px!important;
+  }
   html{
     height: 100%;
   }
   body{
     margin: 0!important;
+    height: 100%;
+  }
+  .wrapper{
     height: 100%;
   }
 #app {
