@@ -30,6 +30,8 @@
 
 # 坑爹的Vue-lazyload
 
+![呵呵]<div align=center><img width="150" height="150" src="https://github.com/qwj19950918/VUE-/blob/master/src/assets/hehe.jpg"/></div>
+
 ```base
 解决图片图片加载慢，提高客户体验决定使用懒加载。
 
